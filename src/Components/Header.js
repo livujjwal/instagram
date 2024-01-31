@@ -7,7 +7,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector((store) => store.user.userInfo);
   const user = userInfo ? userInfo : JSON.parse(localStorage.getItem("user"));
-  console.log(user);
   const token = JSON.parse(localStorage.getItem("token"));
 
   async function logoutUser() {

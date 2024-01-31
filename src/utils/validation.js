@@ -10,7 +10,7 @@ export const checkSignupValidation = (email, name, username, password) => {
   if (!isEmailValid) return "Please enter correct email";
 
   if (!isFullNameValid) return "Please enter full name";
-  console.log(isPasswordValid);
+
   if (!isPasswordValid) return "Please enter a valid password";
 
   if (!username.current.value) return "Please enter a username";
