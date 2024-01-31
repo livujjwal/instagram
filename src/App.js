@@ -1,18 +1,27 @@
-import Signup from "./Components/Signup";
-import { Route,Routes } from "react-router-dom";
-import "./App.css"
-import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+]);
+
 function App() {
   return (
     <div>
- 
- <Routes>
-  <Route path="/" element={<Signup />}></Route>
-  <Route path="/login" element={<Login />}></Route>
-  <Route path="/dashboard" element={<Dashboard />}></Route>
- </Routes>
-      
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

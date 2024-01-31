@@ -1,14 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import UserProvider from "./context/UserProvider"
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <UserProvider>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  </UserProvider>
-);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./App.css";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
